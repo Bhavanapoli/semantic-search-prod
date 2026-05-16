@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    background-color: #0f0f1a;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 1rem;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-image: linear-gradient(to right, #4f46e5, #7c3aed);
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background-image: linear-gradient(to right, #6366f1, #8b5cf6); }
+  .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    color: #d1d5db;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn-ghost:hover { color: #ffffff; background: rgba(255,255,255,0.1); }
+  .input-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background-color: #22223b;
+    border: 1px solid rgba(255,255,255,0.10);
+    color: #ffffff;
+    outline: none;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+  }
+  .input-field::placeholder { color: #6b7280; }
+  .input-field:focus { border-color: #6366f1; box-shadow: 0 0 0 2px rgba(99,102,241,0.2); }
+  .card {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+  .score-bar {
+    height: 6px;
+    border-radius: 9999px;
+    background-image: linear-gradient(to right, #6366f1, #8b5cf6);
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: rgba(99,102,241,0.2);
+    color: #a5b4fc;
+    border: 1px solid rgba(99,102,241,0.2);
+  }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2d2d4a; border-radius: 9999px; }

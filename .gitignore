@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Environment
+.env
+*.env
+!.env.example
+
+# FAISS / model data (large files)
+backend/tmp/*.idx
+backend/tmp/*.pkl
+backend/cache/
+backend/uploads/
+backend/entity/
+backend/MLModels/*.bin
+backend/MLModels/*.pt
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Docker volumes
+mongo_data/
