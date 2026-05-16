@@ -56,7 +56,7 @@ app = FastAPI(title="Semantic Research Search API", version="2.0.0", lifespan=li
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
-origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173,http://localhost:3000").split(",")
+origins = os.getenv("ALLOWED_ORIGINS", "https://semantic-search-prod-18v9pkuav-bhavana-poli-s-projects.vercel.app").split(",")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
