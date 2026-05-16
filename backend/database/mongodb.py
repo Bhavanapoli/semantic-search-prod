@@ -13,15 +13,28 @@ db = None
 
 async def connect_db():
     global client, db
+
     try:
-        client = AsyncIOMotorClient(MONGO_URI, serverSelectionTimeoutMS=5000)
+        client = AsyncIOMotorClient(
+            MONGO_URI,
+            serverSelectionTimeoutMS=5000
+        )
+
         await client.admin.command("ping")
+
         db = client[DB_NAME]
+
         await _create_indexes()
+
         logger.info(f"MongoDB connected: {DB_NAME}")
+
     except Exception as e:
         logger.error(f"MongoDB connection failed: {e}")
 
+        # IMPORTANT
+        raise Exception(f"Database connection failed: {e}")
+    
+    
 
 async def disconnect_db():
     global client
